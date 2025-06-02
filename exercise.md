@@ -13,7 +13,16 @@ digraph {
     rankdir = "LR";
     node [shape=box];
 
-    "     コンピュータリテラシー    " -> "   プログラミングI  ";
+    "     コンピュータリテラシー    " -> "      プログラミングI       " -> "      プログラミングⅡ 　   ";
+     "     コンピュータリテラシー    " -> "     プログラミング基礎Ⅰ     " -> "      プログラミング基礎Ⅱ 　　　";
+     " 　基礎ゼミ    " -> "     プログラミング基礎Ⅰ     " 
+   "　　　情報工学概論　　　" -> "     プログラミング基礎Ⅰ     " 
+   "　　　情報工学概論　　　" -> "    計算機工学　　" -> "   論理回路  "
+
+   
+
+
+
 }
 ```
 
@@ -27,6 +36,25 @@ digraph {
 @startwbs ex02
 * 拓殖大学
 ** 商学部
+*** 経営学科
+*** 国際ビジネス学科        
+*** 会計学科
+** 政経学部
+*** 法律政治学科
+*** 経済学科
+*** 社会安全学科
+** 外国語学部
+*** 英米語学化
+*** 中国語学科
+*** スペイン語学科
+*** 国際日本語学科
+** 工学部
+*** 機械システム学科
+*** 電子システム学科
+*** 情報工学科
+*** デザイン学科
+** 国際学部
+*** 国際学科
 @endwbs
 ```
 
@@ -40,10 +68,26 @@ digraph {
 @startuml ex03
 left to right direction
 actor 学生 as student
+actor "教員" as faculty
 rectangle {
+    usecase "提出結果の採点" as uc8
+    usecase "リモートリポジトリにpush" as uc7
+    usecase "修正のコミット" as uc6
+    usecase "修正のステージに上げる" as uc5
+    usecase "課題ファイルの修正" as uc4
+    usecase "リポジトリのクローン" as uc3
     usecase "課題の受領" as uc2
+   usecase "課題の登録" as uc1
 }
 student --> uc2
+student --> uc3
+student --> uc4
+student --> uc5
+student --> uc6
+student --> uc7
+uc1 <-- faculty
+uc8 <-- faculty
+
 @enduml
 ```
 
@@ -55,10 +99,29 @@ student --> uc2
 
 ```
 ```
+```plantUML
+@startwbs ex02
+* 自分がやっているゲーム
+** FPS
+*** VALORANT
+*** APEX　    
+*** OverWatch2
+** MOBA
+*** League of Legends
+** 格闘ゲーム
+*** ストリートファイター６
+*** Tekken8
+** ストーリーゲーム
+*** 崩壊スターレイル
+*** 原神
+** フロムゲー
+*** Elden Ring 
+@endwbs
+```
 
 
 ## チェック
-- [ ] 課題 3.1 有向グラフ
-- [ ] 課題 3.2 WBS
-- [ ] 課題 3.3 ユースケース図
-- [ ] 課題 3.4 オリジナルの図解
+- [x] 課題 3.1 有向グラフ
+- [x] 課題 3.2 WBS
+- [x] 課題 3.3 ユースケース図
+- [x] 課題 3.4 オリジナルの図解
